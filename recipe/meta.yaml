@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [not osx]
+  skip: True  # [linux or (win and (py27 or py34))]
 
 requirements:
   build:
