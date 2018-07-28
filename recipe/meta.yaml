@@ -11,8 +11,8 @@ source:
   sha256: {{ checksum }}
 
 build:
-  number: 0
-  skip: True  # [not osx]
+  number: 1
+  skip: True  # [linux or (win and py27)]
 
 requirements:
   build:
