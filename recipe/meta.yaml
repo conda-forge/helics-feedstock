@@ -1,6 +1,6 @@
 {% set name = "helics" %}
-{% set version = "1.2.1" %}
-{% set checksum = "0786edb14f854d3c54da9882dcaaaec56d2370ec98abef44d211655065194e5f" %}
+{% set version = "1.3.0" %}
+{% set checksum = "d47759ac172d82c0eea75b34af8807e673ab5562a1cf3097cca6dc976a3c9c06" %}
 
 package:
   name: {{ name|lower }}
