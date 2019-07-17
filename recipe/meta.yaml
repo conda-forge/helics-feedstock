@@ -1,18 +1,18 @@
 {% set name = "helics" %}
-{% set version = "2.0.0" %}
-{% set checksum = "aa1a7be9032d1e7ad886bced08b4e0e8d3ffaf13fa21d1239e91c47e8a9dd677" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/GMLC-TDC/HELICS-src/archive/v{{ version }}.tar.gz
-  sha256: {{ checksum }}
+  git_url: https://github.com/GMLC-TDC/HELICS.git
+  git_rev: v{{ version }}
 
 build:
-  number: 1
-  skip: True  # [linux or (win and py27)]
+  number: 0
+  script_env:
+      - CONDA_BLD_PATH
 
 requirements:
   build:
@@ -21,9 +21,11 @@ requirements:
     - cmake >=3.4.0
     - swig
     - ninja
+    - boost-cpp
+    - zeromq
+    - python
   host:
     - python
-    - pip
     - boost-cpp
     - zeromq
   run:
@@ -36,14 +38,14 @@ test:
     - helics
 
 about:
-  home: https://github.com/GMLC-TDC/HELICS-src
+  home: https://github.com/GMLC-TDC/HELICS
   license: BSD
   license_file: LICENSE
   license_family: BSD
   summary: 'Hierarchical Engine for Large-scale Infrastructure Co-Simulation (HELICS) framework'
   description: 'Hierarchical Engine for Large-scale Infrastructure Co-Simulation (HELICS) framework'
-  doc_url: http://gmlc-tdc.github.io/HELICS-src/index.html
-  dev_url: https://github.com/GMLC-TDC/HELICS-src
+  doc_url: https://helics.readthedocs.io/en/latest/
+  dev_url: https://github.com/GMLC-TDC/HELICS
 
 extra:
   recipe-maintainers:
