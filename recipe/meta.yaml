@@ -11,8 +11,7 @@ source:
 
 build:
   number: 0
-  script_env:
-      - CONDA_BLD_PATH
+  skip: True  # [linux or (win and py27)]
 
 requirements:
   build:
