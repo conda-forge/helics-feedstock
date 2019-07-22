@@ -3,13 +3,6 @@
 set -e
 set -x
 
-
-if [ `uname` = "Darwin" ]; then
-	FLAGS="-std=c++14"
-else
-	FLAGS="-std=c++11"
-fi
-
 if [[ $PY3K -eq 1 || $PY3K == "True" ]]; then
   BUILD_PYTHON="-DBUILD_PYTHON_INTERFACE=ON"
 else
@@ -17,7 +10,15 @@ else
 fi
 
 mkdir -p build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS=$FLAGS ${BUILD_PYTHON} -DCMAKE_INSTALL_PREFIX=$PREFIX -DBUILD_HELICS_TESTS=OFF -DBUILD_HELICS_EXAMPLES=OFF ../
+cmake \
+  -DCMAKE_BUILD_TYPE=Release \
+  ${BUILD_PYTHON} \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DBUILD_HELICS_TESTS=OFF \
+  -DBUILD_HELICS_EXAMPLES=OFF \
+  ..
+
 make -j $CPU_COUNT
 make install
 
