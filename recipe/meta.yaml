@@ -20,9 +20,6 @@ requirements:
     - cmake >=3.4.0
     - swig
     - ninja
-    - boost-cpp
-    - zeromq
-    - python
   host:
     - python
     - boost-cpp
