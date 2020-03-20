@@ -1,5 +1,5 @@
 boost_cpp:
-- 1.68.0
+- 1.70.0
 c_compiler:
 - vs2015
 channel_sources:
@@ -15,12 +15,8 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
   zeromq:
-    max_pin: x.x
+    max_pin: x.x.x
 python:
-- '3.6'
+- 3.8.* *_cpython
 zeromq:
-- 4.3.1
-zip_keys:
-- - python
-  - c_compiler
-  - cxx_compiler
+- 4.3.2
