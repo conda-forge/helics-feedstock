@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/GMLC-TDC/HELICS/archive/v{{ version }}.tar.gz
-  sha256: 217dd619f283ae9aaa3d334bcd1b73080c4963aabba56752f546892c7497c6a9
+  url: https://github.com/GMLC-TDC/HELICS/releases/download/v{{ version }}/Helics-v{{ version }}-source.tar.gz
+  sha256: 4b9a733a568ae8e6492f93abcd43f1aa9c53b233edcbeb0ab188dcc0d73ac928
 
 build:
   number: 0
@@ -41,7 +41,7 @@ about:
   license_family: BSD
   summary: 'Hierarchical Engine for Large-scale Infrastructure Co-Simulation (HELICS) framework'
   description: 'Hierarchical Engine for Large-scale Infrastructure Co-Simulation (HELICS) framework'
-  doc_url: https://gmlc-tdc.github.io/HELICS
+  doc_url: https://docs.helics.org/en/latest/
   dev_url: https://github.com/GMLC-TDC/HELICS
 
 extra:
