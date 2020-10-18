@@ -11,23 +11,22 @@ source:
 
 build:
   number: 0
-  skip: True  # [linux]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake >=3.4.0
+    - ninja  # [win]
     - swig
-    - ninja
   host:
+    - boost-cpp
     - python
     - pip
-    - boost-cpp
     - zeromq
   run:
-    - python
     - boost-cpp
+    - python
     - zeromq
 
 test:
