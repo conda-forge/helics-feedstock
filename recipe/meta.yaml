@@ -1,6 +1,5 @@
 {% set name = "helics" %}
 {% set version = "2.0.0" %}
-{% set checksum = "aa1a7be9032d1e7ad886bced08b4e0e8d3ffaf13fa21d1239e91c47e8a9dd677" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GMLC-TDC/HELICS-src/archive/v{{ version }}.tar.gz
-  sha256: {{ checksum }}
+  sha256: 73e24a09d59ae201e750ac287ab5ceb52c275e4ba6077d47274a9fafc612f2b5
 
 build:
   number: 2
