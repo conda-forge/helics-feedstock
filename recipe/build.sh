@@ -17,7 +17,11 @@ else
 fi
 
 mkdir -p build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS=$FLAGS ${BUILD_PYTHON} -DCMAKE_INSTALL_PREFIX=$PREFIX ../
+cmake -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_CXX_FLAGS=$FLAGS ${BUILD_PYTHON} \
+      -DCMAKE_INSTALL_PREFIX=$PREFIX \
+      ${SRC_DIR}
+# -DBoost_NO_BOOST_CMAKE=ON \
 make -j $CPU_COUNT
 make install
 
