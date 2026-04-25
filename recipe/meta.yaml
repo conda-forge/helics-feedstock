@@ -1,6 +1,6 @@
 {% set name = "helics" %}
 {% set version = "2.0.0" %}
-{% set checksum = "aa1a7be9032d1e7ad886bced08b4e0e8d3ffaf13fa21d1239e91c47e8a9dd677" %}
+{% set checksum = "73e24a09d59ae201e750ac287ab5ceb52c275e4ba6077d47274a9fafc612f2b5" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ checksum }}
 
 build:
-  number: 1
+  number: 2
   skip: True  # [linux or (win and py27)]
 
 requirements:
